@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import {Link} from "react-router-dom"
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -13,7 +14,7 @@ export default function Herosection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white rounded-xl">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -44,9 +45,18 @@ export default function Herosection() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-4 rounded-full">
+            <a href="" className="text-sm font-semibold leading-6 text-gray-900">
+              Log in
             </a>
+            </button>
+            <Link to="/form">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  mx-2 rounded-full">
+              <a href="" className="text-sm font-semibold leading-6 text-gray-900">
+                Sign up
+              </a>
+            </button>
+            </Link>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
